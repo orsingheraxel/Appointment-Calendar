@@ -1,0 +1,39 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para que combine con el fondo */
+  }
+  
+  .navbar-left, .navbar-center, .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .nav-link {
+    color: white;
+    margin: 0 15px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #ffcc00; /* Color de hover en dorado */
+  }
+  
+  .user-icon {
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  .navbar-center {
+    flex-grow: 1;
+    justify-content: center;
+  }
+  

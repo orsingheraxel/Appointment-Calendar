@@ -1,0 +1,9 @@
+/* src/app/app.component.css */
+:host {
+    display: block;
+    min-height: 100vh;
+    background-image: url('../assets/fondo.jpeg');
+    background-size: cover;
+    background-position: center;
+  }
+  
