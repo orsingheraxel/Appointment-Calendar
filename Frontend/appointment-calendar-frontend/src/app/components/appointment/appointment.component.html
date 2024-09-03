@@ -1,1 +1,60 @@
-<p>appointment works!</p>
+<!-- appointment.component.html -->
+<div class="appointment-container">
+  <h1>Agendar Cita</h1>
+  <form (ngSubmit)="submitAppointment()" #appointmentForm="ngForm">
+    <div class="form-group">
+      <label for="serviceType">Tipo de Servicio</label>
+      <select id="serviceType" name="serviceType" [(ngModel)]="appointment.serviceType" required>
+        <option value="" disabled selected>Selecciona un tipo de servicio</option>
+        <option value="corte">Corte</option>
+        <option value="global">Global</option>
+        <option value="mechas">Mechas</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="appointmentDate">Fecha</label>
+      <input
+        id="appointmentDate"
+        type="date"
+        name="appointmentDate"
+        [(ngModel)]="appointment.date"
+        [min]="minDate"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="appointmentTime">Hora</label>
+      <input
+        id="appointmentTime"
+        type="time"
+        name="appointmentTime"
+        [(ngModel)]="appointment.time"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Número de Teléfono</label>
+      <input
+        id="phoneNumber"
+        type="tel"
+        name="phoneNumber"
+        [(ngModel)]="appointment.phoneNumber"
+        pattern="[0-9]{10}"
+        placeholder="Ingrese su número de teléfono"
+        required
+      />
+    </div>
+
+    <button type="submit">Agendar Cita</button>
+  </form>
+
+  <!-- Botón para mostrar turnos disponibles -->
+  <div class="available-slots">
+    <button type="button" [routerLink]="['/appointments/current-week']">
+      Turnos disponibles de la semana concurrente
+    </button>
+  </div>
+</div>

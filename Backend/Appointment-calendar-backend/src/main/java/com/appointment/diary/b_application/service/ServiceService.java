@@ -1,5 +1,6 @@
 package com.appointment.diary.b_application.service;
 
+import com.appointment.diary.b_application.dto.ServiceDTO;
 import com.appointment.diary.c_domain.model.Service;
 
 import java.util.List;
@@ -7,13 +8,13 @@ import java.util.Optional;
 
 public interface ServiceService {
 
-    List<Service> getAllServices();
+    List<ServiceDTO> getAllServices();
 
-    Optional<Service> getServiceById(Long id);
+    Optional<ServiceDTO> getServiceById(Long id);
 
-    Service createService(Service service);
+    ServiceDTO createService(ServiceDTO service);
 
-    Service updateService(Long id, Service service);
+    ServiceDTO updateService(Long id, ServiceDTO service);
 
     void deleteService(Long id);
 }

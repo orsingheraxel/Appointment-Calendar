@@ -1,0 +1,12 @@
+<!-- current-week.component.html -->
+<div class="slots-container-horizontal">
+    <div *ngFor="let slot of availableSlots" class="day-slot">
+      <h3>{{ slot.day }}</h3>
+      <ul>
+        <li *ngFor="let time of slot.times" (click)="selectSlot(slot.date, time)">
+          {{ time }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  

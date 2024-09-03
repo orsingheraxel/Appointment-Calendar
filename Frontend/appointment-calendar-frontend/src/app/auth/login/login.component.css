@@ -1,0 +1,81 @@
+.toHome {
+    display: grid;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5px;
+    margin: 0 left; /* Centramos horizontalmente */
+    max-width: 800px; /* Establecemos un ancho máximo */
+    margin-top: 200px;
+}
+
+.toHome h1 {
+    color: #f4f4f4;
+    margin-bottom: 15px; /* Reducir el margen inferior del h1 */
+    font-family: "Acme", sans-serif;
+}
+
+.toHome form {
+    margin-top: 5px; /* Ajustar el margen superior del form */
+}
+
+.emailPassword {
+    color: #f4f4f4;
+    margin-top: 0px;
+}
+
+.emailPassword label {
+    display: inline-block;
+    margin-bottom: 5px; /* Ajusta el margen inferior del label si es necesario */
+    color: #f4f4f4;
+}
+
+.emailPassword input {
+    font-size: 14px; /* Tamaño de la fuente del input */
+    padding: 5px; /* Espaciado interno del input */
+    width: calc(100% - 20px); /* Ajusta el ancho del input */
+    margin-left: 0; /* Elimina cualquier margen a la izquierda */
+    margin-right: 0; /* Elimina cualquier margen a la derecha */
+    box-sizing: border-box; /* Asegura que el padding y el borde no afecten al ancho total del input */
+    border: 1px solid #b8b8b8; /* Borde gris suave */
+    border-radius: 4px;
+}
+
+.emailPassword-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    gap: 10px; /* Espaciado entre el label y el input */
+}
+
+.dangerStyle {
+    color: #ffcc00; /* Color dorado para mensajes de error */
+    font-size: 13px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+  
+.signInRegister {
+    display: flex;
+    gap: 10px; /* Espaciado entre los botones */
+}
+
+.signInRegister .btn {
+    font-size: 14px; /* Tamaño de la fuente */
+    padding: 5px 10px; /* Espaciado interno del botón */
+    background-color: #dacece; /* Color beige claro */
+    border: none;
+    color: #333; /* Color del texto */
+    transition: background-color 0.3s ease;
+}
+
+.signInRegister .btn:hover {
+    background-color: #ffcc00; /* Color dorado en hover */
+}
+
+.bricolage-grotesque-font {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}

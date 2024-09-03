@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: calc(90vh - 80px); /* Ajusta esto según la altura de tu navbar */
+  gap: 40px;
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #222;
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  height: 100%; /* Ocupará todo el espacio disponible */
+  min-width: 0;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+  max-height: 550px; /* Ajusta la altura máxima según lo necesario */
+  object-fit: scale-down; /* Asegura que la imagen cubra el contenedor sin deformarse */
+  border-bottom: 2px solid #ffcc00;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.box h2 {
+  margin: 0;
+  padding: 10px;
+}
+
+.box.hovered {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

@@ -1,5 +1,6 @@
 package com.appointment.diary.b_application.dto;
 
+import com.appointment.diary.c_domain.model.StatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +17,6 @@ public class AppointmentDTO {
     private Long userId;
     private Long serviceId;
     private LocalDateTime appointmentTime;
-    private boolean isConfirmed;
-    private String status;
+    private boolean isAnswered;
+    private StatusEnum status;
 }

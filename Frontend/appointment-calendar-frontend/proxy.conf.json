@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "https://fake-store-api-2no73ornoa-uc.a.run.app/api",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
+  

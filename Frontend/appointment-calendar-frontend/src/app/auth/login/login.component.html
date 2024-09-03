@@ -1,1 +1,55 @@
-<p>login works!</p>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bricolage-grotesque-font background">
+        <div class="toHome">
+            <h1>Bienvenido al Salón de Belleza</h1>
+            <form [formGroup]="signInForm" class="row g-3 needs-validation" novalidate (submit)="enviar($event)">
+                <div class="emailPassword row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input 
+                            type="email" 
+                            class="form-control" 
+                            id="inputEmail3"
+                            placeholder="tuemail@example.com" 
+                            formControlName="email"
+                            [ngClass]="{'is-invalid': hasErrors('email','required')||hasErrors('email','email')}"
+                        >
+                        <ng-container *ngIf="hasErrors('email', 'email')">
+                            <span class="dangerStyle danger">Formato de email inválido.</span>
+                        </ng-container>
+                        <ng-container *ngIf="hasErrors('email', 'required')">
+                            <span class="dangerStyle danger">Este campo es obligatorio.</span>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="emailPassword row mb-3">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
+                    <div class="col-sm-10">
+                        <input 
+                            type="password" 
+                            class="form-control" 
+                            id="inputPassword3"
+                            formControlName="password"
+                            [ngClass]="{'is-invalid': hasErrors('password','required')||hasErrors('password','minlength')}"
+                        >
+                        <ng-container *ngIf="hasErrors('password', 'minlength')">
+                            <span class="dangerStyle danger">La contraseña es muy corta. Mínimo 6 caracteres.</span>
+                        </ng-container>
+                        <ng-container *ngIf="hasErrors('password', 'required')">
+                            <span class="dangerStyle danger">Este campo es obligatorio.</span>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="signInRegister">
+                    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                    <button type="button" class="btn btn-primary" (click)="onRegister()">Registrarse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

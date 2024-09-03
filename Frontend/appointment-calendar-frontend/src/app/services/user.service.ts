@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
@@ -12,12 +12,11 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<User[]> {
+  getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.apiUrl}/${this.urlUser}`);
   }
 
-  getProductById(id: number): Observable<User> {
+  getUserById(id: number): Observable<User> {
     return this.http.get<User>(`${this.apiUrl}/${this.urlUser}/${id}`);
   }
-
 }

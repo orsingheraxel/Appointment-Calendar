@@ -1,19 +1,24 @@
 package com.appointment.diary.b_application.service;
 
+import com.appointment.diary.b_application.dto.ReviewDTO;
 import com.appointment.diary.c_domain.model.Review;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public interface ReviewService {
 
-    List<Review> getAllReviews();
+    List<ReviewDTO> getAllReviews();
 
-    Optional<Review> getReviewById(Long id);
+    Optional<ReviewDTO> getReviewById(Long id);
 
-    Review createReview(Review review);
+    ReviewDTO createReview(ReviewDTO review);
 
-    Review updateReview(Long id, Review review);
+    ReviewDTO updateReview(Long id, ReviewDTO review);
 
     void deleteReview(Long id);
+
+    List<ReviewDTO> findByUserId(Long userId);
 }

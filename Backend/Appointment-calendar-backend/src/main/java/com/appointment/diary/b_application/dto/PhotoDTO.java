@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -13,6 +15,6 @@ public class PhotoDTO {
     private Long id;
     private String url;
     private Long serviceId;
-    private Long providerId;
-    private String uploadedAt;  // Asumiendo que es un String, puedes cambiarlo si necesitas
+    private Long productId;
+    private LocalDateTime uploadedAt;
 }

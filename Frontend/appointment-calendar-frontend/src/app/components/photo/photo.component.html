@@ -1,1 +1,7 @@
-<p>photo works!</p>
+<h1>Mira nuestros trabajos!</h1>
+<div class="photo-container">
+    <div class="photo" *ngFor="let image of images">
+      <img [src]="image" alt="Imagen del servicio">
+    </div>
+  </div>
+  

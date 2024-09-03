@@ -1,1 +1,30 @@
-<p>service works!</p>
+<div class="container">
+    <div 
+      class="box" 
+      [class.hovered]="activeBox === 0"
+      (mouseover)="setActiveBox(0)"
+      (mouseleave)="setActiveBox(null)"
+    >
+      <img src="/assets/corte.jpeg" alt="Imagen 1" [routerLink]="['/services/photo-corte']" routerLinkActive="router-link-active" >
+      <h2>Corte</h2>
+    </div>
+    <div 
+      class="box" 
+      [class.hovered]="activeBox === 1"
+      (mouseover)="setActiveBox(1)"
+      (mouseleave)="setActiveBox(null)"
+    >
+      <img src="/assets/global.jpeg" alt="Imagen 2" [routerLink]="['/services/photo-global']" routerLinkActive="router-link-active" >
+      <h2>Global</h2>
+    </div>
+    <div 
+      class="box" 
+      [class.hovered]="activeBox === 2"
+      (mouseover)="setActiveBox(2)"
+      (mouseleave)="setActiveBox(null)"
+    >
+      <img src="/assets/mechitas.jpeg" alt="Imagen 3" [routerLink]="['/services/photo-mechas']" routerLinkActive="router-link-active" >
+      <h2>Mechas</h2>
+    </div>
+  </div>
+  

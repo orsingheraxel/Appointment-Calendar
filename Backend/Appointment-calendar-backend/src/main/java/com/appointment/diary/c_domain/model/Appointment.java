@@ -1,5 +1,6 @@
 package com.appointment.diary.c_domain.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,18 +24,21 @@ public class Appointment {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonBackReference
     private UserEntity user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id", nullable = false)
+    @JsonBackReference
     private Service service;
 
     @Column(nullable = false)
     private LocalDateTime appointmentTime;
 
     @Column(nullable = false)
-    private boolean isConfirmed = false;
+    private boolean isAnswered = false;
 
     @Column(nullable = false)
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private StatusEnum status = StatusEnum.PENDING;
 }

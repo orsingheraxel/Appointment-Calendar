@@ -1,6 +1,6 @@
 /* src/styles.css */
 :root {
-    --primary-color: #007bff;
+    --primary-color: #ffcc00;
     --secondary-color: #6c757d;
     --background-color: #f8f9fa;
   }
@@ -15,4 +15,12 @@
   h1, h2, h3 {
     color: var(--primary-color);
   }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Evita que la página tenga scroll */
+  }
+  
   

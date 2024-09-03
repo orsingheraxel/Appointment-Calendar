@@ -1,5 +1,7 @@
 package com.appointment.diary.c_domain.model;
 
+import com.appointment.diary.c_domain.model.cart.Product;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,13 +27,28 @@ public class Photo {
     private String url;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "service_id")
+    @JoinColumn(name = "service_id", nullable = true)
+    @JsonBackReference
     private Service service;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private UserEntity provider;
+    @JoinColumn(name = "product_id", nullable = true)
+    @JsonBackReference
+    private Product product;
 
     @Column(nullable = false)
     private LocalDateTime uploadedAt = LocalDateTime.now();
+
+    //Una foto esta vinculada a un servicio o a un producto, no a ambos.
+    @PrePersist
+    @PreUpdate
+    public void validateAssociation() {
+        if (service == null && product == null) {
+            throw new IllegalStateException("Photo must be associated with either a Service or a Product.");
+        }
+        if (service != null && product != null) {
+            throw new IllegalStateException("Photo cannot be associated with both a Service and a Product.");
+        }
+    }
 }
+

@@ -1,0 +1,48 @@
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  color: white;
+  height: 90vh; /* Ajustamos la altura al 100% del viewport */
+  box-sizing: border-box;
+}
+
+.home-left {
+  width: 45%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para que combine con el fondo */
+  border-radius: 10px;
+  margin-top: 220px; /* Baja la sección para centrarla más verticalmente */
+  margin-bottom: 40px; /* Ajusta este valor según necesites */
+}
+
+.home-left h2 {
+  color: #ffcc00; /* Título en dorado */
+}
+
+.home-left p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.home-right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  margin-top: 70px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 5px solid #ffcc00; /* Borde dorado alrededor del carousel */
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}

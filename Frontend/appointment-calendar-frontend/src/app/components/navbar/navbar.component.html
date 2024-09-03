@@ -1,14 +1,15 @@
 <nav class="navbar">
     <div class="navbar-left">
-      <img src="../../../assets/barber_icon.jpeg" alt="Logo" class="logo">
+      <img src="/assets/barber_icon.jpeg" alt="Logo" class="logo">
     </div>
     <div class="navbar-center">
-      <a routerLink="/appointments" class="nav-link">Appointments</a>
+      <a routerLink="" class="nav-link">About us</a>
       <a routerLink="/services" class="nav-link">Services</a>
-      <a routerLink="/photos" class="nav-link">Photos</a>
+      <a routerLink="/appointments" class="nav-link">Appointments</a>
+      <a routerLink="/products" class="nav-link">Products</a>
     </div>
     <div class="navbar-right">
-      <img src="../../../assets/user_profile.jpeg" alt="User Profile" class="user-icon">
+      <img src="/assets/user_profile.jpeg" alt="User Profile" class="user-icon" [routerLink]="['/login']" routerLinkActive="router-link-active" >
     </div>
   </nav>
   

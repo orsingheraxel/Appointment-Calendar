@@ -1,10 +1,15 @@
 package com.appointment.diary.b_application.service.impl;
 
+import com.appointment.diary.b_application.dto.AppointmentDTO;
+import com.appointment.diary.b_application.dto.ReviewDTO;
 import com.appointment.diary.b_application.dto.UserDTO;
+import com.appointment.diary.b_application.mapper.AppointmentMapper;
+import com.appointment.diary.b_application.mapper.ReviewMapper;
 import com.appointment.diary.b_application.mapper.UserMapper;
 import com.appointment.diary.b_application.service.UserService;
+import com.appointment.diary.c_domain.exception.InvalidRequestException;
 import com.appointment.diary.c_domain.model.UserEntity;
-import com.appointment.diary.c_domain.repository.UserRepository;
+import com.appointment.diary.b_application.port.out.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +22,15 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
+    private final AppointmentMapper appointmentMapper;
+    private final ReviewMapper reviewMapper;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
+    public UserServiceImpl(UserRepository userRepository, UserMapper userMapper, AppointmentMapper appointmentMapper, ReviewMapper reviewMapper) {
         this.userRepository = userRepository;
         this.userMapper = userMapper;
+        this.appointmentMapper=appointmentMapper;
+        this.reviewMapper=reviewMapper;
     }
 
     @Override
@@ -44,7 +53,7 @@ public class UserServiceImpl implements UserService {
             userEntity.setId(id);
             return userMapper.toDTO(userRepository.save(userEntity));
         } else {
-            throw new IllegalArgumentException("User with ID " + id + " not found.");
+            throw new InvalidRequestException("User with ID " + id + " not found.");
         }
     }
 
@@ -53,7 +62,7 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);
         } else {
-            throw new IllegalArgumentException("User with ID " + id + " not found.");
+            throw new InvalidRequestException("User with ID " + id + " not found.");
         }
     }
 }

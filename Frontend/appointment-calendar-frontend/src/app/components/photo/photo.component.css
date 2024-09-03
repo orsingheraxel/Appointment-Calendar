@@ -1,0 +1,20 @@
+.photo-container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente las imágenes */
+    align-items: center; /* Centrar verticalmente las imágenes si es necesario */
+    gap: 20px; /* Espacio entre las imágenes */
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Envolver las imágenes si la pantalla es pequeña */
+  }
+  
+  .photo img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 10px;
+    border: 5px solid #ffcc00; /* Borde dorado alrededor de cada imagen */
+  }
+  
+  h1{
+    justify-content: center;
+  }

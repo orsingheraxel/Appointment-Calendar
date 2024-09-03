@@ -1,0 +1,24 @@
+<h1 class="texto">¡Mira nuestros productos!</h1>
+
+<div class="filter-container">
+  <select class="filter form-select" aria-label="Default select example">
+    <option selected>Filter</option>
+    <option value="1">Low Price</option>
+    <option value="2">Medium Price</option>
+    <option value="3">High Price</option>
+  </select>
+</div>
+
+<div class="products-container">
+  <div class="card" *ngFor="let product of productList; let i = index">
+    <!-- <img *ngIf="product.imageUrl" [src]="'http://localhost:8080/' + product.imageUrl" class="card-img-top"
+      alt="{{product.name}}"> -->
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">{{product.description | slice:0:20}}...</p>
+      <p class="card-price">{{product.price | currency}}</p>
+      <p class="card-price">{{product.createdAt | date}}</p>
+      <button type="button" class="btn btn-outline-primary" (click)="navegate(product.id)">Details</button>
+    </div>
+  </div>
+</div>

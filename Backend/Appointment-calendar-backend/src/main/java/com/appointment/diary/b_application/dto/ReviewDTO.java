@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -15,5 +17,5 @@ public class ReviewDTO {
     private Long serviceId;
     private String comment;
     private int rating;
-    private String createdAt;  // Asumiendo que es un String, puedes cambiarlo si necesitas
+    private LocalDateTime createdAt;
 }
